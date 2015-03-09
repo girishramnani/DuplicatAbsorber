@@ -1,7 +1,6 @@
 package tests;
 
-import DatabaseIO.HashRepository;
-import DatabaseIO.HashRepositoryFactory;
+import DatabaseIO.*;
 import org.junit.Test;
 import org.junit.runners.JUnit4;
 
@@ -11,15 +10,20 @@ public class HashRepositoryFactoryTest{
     HashRepository hashRepository;
     @org.junit.Before
     public void setUp() throws Exception {
-        hashRepository = HashRepositoryFactory.getInstance();
+        hashRepository =HashRepositoryFactory.getInstance(Backend.HashSet);
+
     }
 
+    @Test
+    public void DifferentInterfaceTrials(){
+        HashRepository s= HashRepositoryFactory.getInstance();
+        assertTrue(s instanceof SetHashRepository);
+    }
 
     @Test
     public void checkSingleton(){
         assertTrue(hashRepository == HashRepositoryFactory.getInstance());
     }
-
     @Test
     public void checkHash(){
     hashRepository.addData("girish".getBytes());

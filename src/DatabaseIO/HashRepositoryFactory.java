@@ -1,18 +1,33 @@
 package DatabaseIO;
 
+import com.sun.istack.internal.NotNull;
+
 /**
- * Created by Girish on 09-03-2015.
+ * Standard singleton design pattern
  */
 public class HashRepositoryFactory {
     private static HashRepository hashRepository =null;
-
     private HashRepositoryFactory(){
 
     }
     public static HashRepository getInstance(){
+        return hashRepository;
+    }
+    public static HashRepository getInstance(@NotNull Backend backend){
         if(hashRepository ==null){
-            hashRepository = new SetHashRepository();
+            switch (backend) {
+                case SQLite:
+                    hashRepository = new SQliteHashRepository();
+                    break;
+                case H2:
+                    hashRepository = new H2HashRepository();
+                    break;
+                case HashSet:
+                    hashRepository = new SetHashRepository();
+                    break;
+            }
         }
+
         return hashRepository;
     }
 

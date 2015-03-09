@@ -1,14 +1,14 @@
 package DatabaseIO;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Girish on 09-03-2015.
  */
 public class SetHashRepository implements HashRepository{
 
-    private HashSet<String> setRepo;
-
+    private Set<String> setRepo;
 
     public SetHashRepository(){
         setRepo = new HashSet<String>(10,20);
@@ -34,6 +34,7 @@ public class SetHashRepository implements HashRepository{
 
     @Override
     public void removeAll() {
+        setRepo.removeAll(setRepo);
 
     }
 }
