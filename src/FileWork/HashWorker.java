@@ -2,10 +2,12 @@ package FileWork;
 
 import FileIO.FileEvent;
 
+import java.nio.file.Path;
+
 /**
  * Created by Girish on 10-03-2015.
  */
 public interface HashWorker extends Worker {
 
-    public String hash(FileEvent fileEvent);
+    public String hash(Path file);
 }
