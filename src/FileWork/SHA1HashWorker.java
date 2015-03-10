@@ -39,14 +39,22 @@ public class SHA1HashWorker implements HashWorker {
 
     @Override
     public String hash(Path file) throws IOException {
+        try(BufferedInputStream br = new BufferedInputStream(Files.newInputStream(file))){
+            buffer = new byte[SIZE_BUFFER];
+            int t=0;
+            do{
+                t =br.read(buffer);
+                messageDigest.update(buffer);
+            }
+            while (t !=-1);
+        }
 
-        buffer = new byte[SIZE_BUFFER];
-       return null;
+
+       return new String(messageDigest.digest());
     }
 
     @Override
     public String transform(FileEvent fileEvent) throws IOException {
-
     return hash(fileEvent.getPath());
 
     }
