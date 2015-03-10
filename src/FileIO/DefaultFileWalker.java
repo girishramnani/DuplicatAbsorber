@@ -9,15 +9,24 @@ import java.nio.file.attribute.BasicFileAttributes;
  * Created by Girish on 09-03-2015.
  */
 public class DefaultFileWalker extends AbstractFileWalker {
+    private FileEvent fileEvent;
+    private FileEventListener fileEventListener;
 
     public DefaultFileWalker(){
         super();
 
     }
 
+    public void setFileEventListener(FileEventListener fileEventListener){
+        this.fileEventListener = fileEventListener;
+    }
+
+
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        return null;
+        fileEvent = new FileEvent(file);
+        fileEventListener.apply(fileEvent);
+        return FileVisitResult.CONTINUE;
     }
 
     @Override

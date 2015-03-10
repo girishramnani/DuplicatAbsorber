@@ -1,9 +1,7 @@
 package FileIO;
 
-import java.awt.*;
-
 /**
- * Created by Girish on 09-03-2015.
+ * Create interface between hashRepository and the  FileWalker
  */
 public interface FileEventListener {
 

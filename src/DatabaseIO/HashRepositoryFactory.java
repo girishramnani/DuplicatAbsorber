@@ -8,7 +8,6 @@ import com.sun.istack.internal.NotNull;
 public class HashRepositoryFactory {
     private static HashRepository hashRepository =null;
     private HashRepositoryFactory(){
-
     }
     public static HashRepository getInstance(){
         return hashRepository;
