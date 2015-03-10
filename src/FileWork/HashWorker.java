@@ -2,6 +2,8 @@ package FileWork;
 
 import FileIO.FileEvent;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.nio.file.Path;
 
 /**
@@ -9,5 +11,5 @@ import java.nio.file.Path;
  */
 public interface HashWorker extends Worker {
 
-    public String hash(Path file);
+    public String hash(Path file) throws IOException;
 }

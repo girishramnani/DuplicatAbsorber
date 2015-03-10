@@ -14,9 +14,10 @@ import static org.junit.Assert.*;
 
 public class DefaultFileWalkerTest {
     DefaultFileWalker df;
+
     @Before
     public void setUp() throws Exception {
-         df = new DefaultFileWalker();
+        df = new DefaultFileWalker();
         df.setFileEventListener(new FileEventListener() {
             @Override
             public void apply(FileEvent fileEvent) {
@@ -26,10 +27,11 @@ public class DefaultFileWalkerTest {
 
 
     }
+
     @Test
-    public void test_name(){
+    public void test_name() {
         try {
-            Files.walkFileTree(Paths.get("../"),df);
+            Files.walkFileTree(Paths.get("../"), df);
         } catch (IOException e) {
             e.printStackTrace();
         }

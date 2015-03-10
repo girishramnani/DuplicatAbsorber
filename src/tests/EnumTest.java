@@ -15,18 +15,18 @@ import static org.junit.Assert.assertEquals;
  */
 public class EnumTest {
     Algorithm algorithm;
-    
+
     @Test
-    public void test1(){
+    public void test1() {
         algorithm = Algorithm.MD5;
-        assertEquals(algorithm.toString(),"MD5");
-        
+        assertEquals(algorithm.toString(), "MD5");
+
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         algorithm = Algorithm.SHA1;
-        assertEquals(algorithm.toString(),"SHA-1");
+        assertEquals(algorithm.toString(), "SHA-1");
     }
-    
+
 }
