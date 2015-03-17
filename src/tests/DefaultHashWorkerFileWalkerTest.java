@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
 
-public class DefaultFileWalkerTest {
+public class DefaultHashWorkerFileWalkerTest {
     DefaultFileWalker df;
 
     @Before

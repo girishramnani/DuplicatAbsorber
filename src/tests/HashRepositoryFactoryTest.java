@@ -38,13 +38,13 @@ public class HashRepositoryFactoryTest {
 
     @Test
     public void checkHash() {
-        hashRepository.addData("girish".getBytes());
+        hashRepository.addData("girish");
         assertEquals(hashRepository.toString(), "[girish]");
     }
 
     @Test
     public void checkPresence() {
-        assertTrue(hashRepository.present("girish".getBytes()));
+        assertTrue(hashRepository.present("girish"));
     }
 
 }

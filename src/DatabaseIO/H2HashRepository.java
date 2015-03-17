@@ -11,12 +11,12 @@ public class H2HashRepository implements HashRepository {
     }
 
     @Override
-    public int addData(byte[] data) {
+    public int addData(String data) {
         return 0;
     }
 
     @Override
-    public boolean present(byte[] data) {
+    public boolean present(String data) {
         return false;
     }
 

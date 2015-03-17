@@ -16,8 +16,8 @@ public class SetHashRepository implements HashRepository{
 
 
     @Override
-    public int addData(byte[] data) {
-        setRepo.add(new String(data));
+    public int addData(String data) {
+        setRepo.add(data);
         return 1;
 
     }
@@ -28,8 +28,8 @@ public class SetHashRepository implements HashRepository{
     }
 
     @Override
-    public boolean present(byte[] data) {
-        return setRepo.contains(new String(data));
+    public boolean present(String data) {
+        return setRepo.contains(data);
     }
 
     @Override

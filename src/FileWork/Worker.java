@@ -9,5 +9,6 @@ import java.io.IOException;
  */
 public interface Worker {
 
+
     public String transform(FileEvent fileEvent) throws IOException;
 }
