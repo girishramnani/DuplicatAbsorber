@@ -12,10 +12,10 @@ import javax.swing.*;
  *
  * @author internet_2
  */
-public class test_swingWorker {
+public class SwingWorkerTest {
 
     public static void main(String[] args) {
-        new test_swingWorker().doJob();
+        new SwingWorkerTest().doJob();
     }
 
     public void doJob() {

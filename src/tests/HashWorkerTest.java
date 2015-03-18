@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-public class HashWorkerTests {
+public class HashWorkerTest {
     private DefaultHashWorker hashWorker;
 
     @Test
