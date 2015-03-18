@@ -20,14 +20,14 @@ public class test_swingWorker {
 
     public void doJob() {
 
-        JTextArea msgLabel;
+        JTextField msgLabel;
         JProgressBar progressBar;
         final int MAXIMUM = 100;
         JPanel panel;
 
         progressBar = new JProgressBar(0, MAXIMUM);
         progressBar.setIndeterminate(true);
-        msgLabel = new JTextArea("deneme");
+        msgLabel = new JTextField("deneme");
         msgLabel.setEditable(false);
 
         panel = new JPanel(new BorderLayout(5, 5));
@@ -41,7 +41,7 @@ public class test_swingWorker {
         dialog.pack();
         dialog.setSize(500, dialog.getHeight());
         dialog.setLocationRelativeTo(null);
-        dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setAlwaysOnTop(false);
         dialog.setVisible(true);
         msgLabel.setBackground(panel.getBackground());
