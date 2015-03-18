@@ -2,6 +2,7 @@ package Gui;
 
 
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
 
 /**
@@ -10,6 +11,8 @@ import java.awt.*;
 public class MainFrame extends JFrame {
     private BottomPanel bottomPanel;
     private TopPanel topPanel;
+    private FileTable fileTable;
+    private TableModel tableModel;
 
 
 
@@ -22,9 +25,10 @@ public class MainFrame extends JFrame {
         bottomPanel=new BottomPanel();
         topPanel = new TopPanel();
         topPanel.setInteractor(bottomPanel);
-
-        add(bottomPanel,BorderLayout.SOUTH);
+        fileTable =new FileTable();
+        add(bottomPanel, BorderLayout.SOUTH);
         add(topPanel,BorderLayout.NORTH);
+        add(new JScrollPane(fileTable),BorderLayout.CENTER);
         setVisible(true);
 
     }

@@ -12,10 +12,12 @@ import java.util.List;
  * the main File Jtable that shows the files which are duplicate.
  */
 public class FileTable extends JTable {
-
+    private FileModel fileModel;
     public FileTable(){
         super();
-        setModel(new FileModel());
+        fileModel = new FileModel();
+        setModel(fileModel);
+        setEnabled(true);
 
 
     }
