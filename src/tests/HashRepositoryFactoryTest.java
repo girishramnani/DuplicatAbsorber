@@ -20,6 +20,7 @@ public class HashRepositoryFactoryTest {
         assertSame(hashRepository, HashRepositoryFactory.getInstance(Backend.H2));
 
     }
+    @Test
     public void finalSingleton2(){
         assertSame(hashRepository, HashRepositoryFactory.getInstance(Backend.SQLite));
 

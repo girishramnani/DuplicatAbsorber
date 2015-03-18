@@ -6,6 +6,10 @@ import com.sun.istack.internal.NotNull;
  * Standard singleton design pattern
  */
 public class HashRepositoryFactory {
+
+    /*
+    * The default storage for the hashes related to the algorithm
+    * */
     private static HashRepository hashRepository =null;
     private HashRepositoryFactory(){
     }
