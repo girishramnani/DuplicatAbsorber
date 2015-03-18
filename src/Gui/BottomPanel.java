@@ -10,8 +10,10 @@ public class BottomPanel extends JPanel {
 
     private JButton startButton;
     private LayoutManager layoutManager;
-
+    private JButton deleteButton;
     public BottomPanel(){
+
+        deleteButton = new JButton("Delete");
         startButton = new JButton("Start");
         layoutManager = new FlowLayout(FlowLayout.RIGHT,10,10);
         setLayout(layoutManager);
