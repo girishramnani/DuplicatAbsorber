@@ -19,12 +19,14 @@ public class MainFrame extends JFrame {
         setSize(640,480);
         setPreferredSize(new Dimension(640,480));
         add(new BottomPanel(),BorderLayout.SOUTH);
+        add(new TopPanel(),BorderLayout.NORTH);
         setVisible(true);
 
     }
 
     public void SetupUI(){
         try {
+            this.setResizable(false);
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
