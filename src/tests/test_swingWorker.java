@@ -3,10 +3,9 @@
  * and open the template in the editor.
  */
 
-package Gui;
+package tests;
 
 import java.awt.BorderLayout;
-import java.util.List;
 import javax.swing.*;
 
 /**
