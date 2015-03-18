@@ -5,9 +5,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
 
-/**
- * Created by Girish on 17-03-2015.
- */
+
 public class TopPanel extends JPanel {
     private JLabel label ;
     private File selectedDirectory;
@@ -24,22 +22,31 @@ public class TopPanel extends JPanel {
         this.interactor = interactor;
     }
 
-    public TopPanel(){
-        layoutManager = new BoxLayout(this,BoxLayout.X_AXIS);
+    public TopPanel() {
+        layoutManager = new BoxLayout(this, BoxLayout.X_AXIS);
         label = new JLabel("The directory:-");
         directoryField = new JTextField(40);
         BrowseButton = new JButton("Browse");
+        addListners();
+
+
 
         add(label);
         add(Box.createHorizontalStrut(10));
         add(directoryField);
         add(Box.createHorizontalStrut(10));
         add(BrowseButton);
+    }
 
+    private void addListners(){
+        BrowseButton.addActionListener((ev)-> FileSelection());
 
 
 
     }
+
+
+
     public void FileSelection(){
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
