@@ -1,5 +1,6 @@
 package Gui;
 
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,10 +9,10 @@ import java.awt.*;
  */
 public class FileProgressBar extends JDialog {
 
-    JTextField msgLabel;
-    JProgressBar progressBar;
+    private JTextField filelabel;
+    private JProgressBar progressBar;
     final int MAXIMUM = 100;
-    JPanel panel;
+    private JPanel panel;
 
     public FileProgressBar(){
         super();
@@ -19,11 +20,11 @@ public class FileProgressBar extends JDialog {
 
         progressBar = new JProgressBar(0, MAXIMUM);
         progressBar.setIndeterminate(true);
-        msgLabel = new JTextField();
-        msgLabel.setEditable(false);
+        filelabel = new JTextField();
+        filelabel.setEditable(false);
 
         panel = new JPanel(new BorderLayout(5, 5));
-        panel.add(msgLabel, BorderLayout.PAGE_START);
+        panel.add(filelabel, BorderLayout.PAGE_START);
         panel.add(progressBar, BorderLayout.CENTER);
         panel.setBorder(BorderFactory.createEmptyBorder(11, 11, 11, 11));
 
@@ -35,10 +36,14 @@ public class FileProgressBar extends JDialog {
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setAlwaysOnTop(false);
         this.setVisible(true);
-        msgLabel.setBackground(panel.getBackground());
+        filelabel.setBackground(panel.getBackground());
 
     }
     public void setFileName(String name){
-
+        filelabel.setText(name);
+        repaint();
+    }
+    public void close(){
+        this.close();
     }
 }
