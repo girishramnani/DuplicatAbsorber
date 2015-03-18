@@ -31,7 +31,7 @@ public class TopPanel extends JPanel {
         addListners();
         setLayout(layoutManager);
 
-        Border raisedbevel = BorderFactory.createRaisedBevelBorder();
+        Border raisedbevel = BorderFactory.createLoweredSoftBevelBorder();
         setBorder(raisedbevel);
 
         addComponents();
