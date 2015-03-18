@@ -1,6 +1,7 @@
 package Gui;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
@@ -28,14 +29,22 @@ public class TopPanel extends JPanel {
         directoryField = new JTextField(40);
         BrowseButton = new JButton("Browse");
         addListners();
+        setLayout(layoutManager);
 
+        Border raisedbevel = BorderFactory.createRaisedBevelBorder();
+        setBorder(raisedbevel);
 
+        addComponents();
+    }
 
+    private void addComponents() {
+        add(Box.createHorizontalStrut(10));
         add(label);
         add(Box.createHorizontalStrut(10));
         add(directoryField);
         add(Box.createHorizontalStrut(10));
         add(BrowseButton);
+        add(Box.createHorizontalStrut(10));
     }
 
     private void addListners(){
@@ -45,14 +54,13 @@ public class TopPanel extends JPanel {
 
     }
 
-
-
     public void FileSelection(){
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int a=fileChooser.showOpenDialog(this);
         if(a ==JFileChooser.APPROVE_OPTION){
             selectedDirectory=fileChooser.getSelectedFile();
+            directoryField.setText(selectedDirectory.getAbsolutePath());
             //check for the directory permissions
             if(interactor !=null){
                 interactor.interact();

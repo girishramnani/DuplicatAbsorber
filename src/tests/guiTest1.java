@@ -11,6 +11,6 @@ public class guiTest1 {
 
 
         MainFrame mainFrame= new MainFrame("working");
-        
+
     }
 }

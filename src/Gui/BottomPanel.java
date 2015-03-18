@@ -16,9 +16,13 @@ public class BottomPanel extends JPanel implements Interactor{
         deleteButton = new JButton("Delete");
         startButton = new JButton("Start");
         startButton.setEnabled(false);
+        deleteButton.setEnabled(false);
+
         layoutManager = new FlowLayout(FlowLayout.RIGHT,10,10);
         setLayout(layoutManager);
+
         add(startButton);
+        add(deleteButton);
     }
 
     @Override
