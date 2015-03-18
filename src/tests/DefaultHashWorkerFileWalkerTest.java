@@ -1,16 +1,14 @@
 package tests;
 
-import FileIO.DefaultFileWalker;
-import FileIO.FileEvent;
-import FileIO.FileEventListener;
+import FileFind.DefaultFileWalker;
+import FileFind.FileEvent;
+import FileFind.FileEventListener;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
-import static org.junit.Assert.*;
 
 public class DefaultHashWorkerFileWalkerTest {
     DefaultFileWalker df;

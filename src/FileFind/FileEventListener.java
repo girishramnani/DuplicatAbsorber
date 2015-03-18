@@ -1,4 +1,4 @@
-package FileIO;
+package FileFind;
 
 /**
  * Create interface between hashRepository and the  FileWalker

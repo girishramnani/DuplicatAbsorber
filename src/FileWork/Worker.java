@@ -1,6 +1,6 @@
 package FileWork;
 
-import FileIO.FileEvent;
+import FileFind.FileEvent;
 
 import java.io.IOException;
 

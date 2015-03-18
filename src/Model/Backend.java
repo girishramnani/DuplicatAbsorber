@@ -1,4 +1,4 @@
-package DatabaseIO;
+package Model;
 
 /*
 * Enum for selecting different types of backend in the hashRepository

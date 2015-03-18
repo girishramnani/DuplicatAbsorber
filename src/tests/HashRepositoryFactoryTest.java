@@ -1,8 +1,7 @@
 package tests;
 
-import DatabaseIO.*;
+import Model.*;
 import org.junit.Test;
-import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.*;
 

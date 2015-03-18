@@ -1,8 +1,7 @@
-package FileIO;
+package FileFind;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 /**
  * Couldnt wrap my head around so created a FileEvent which can be used by the eventListener

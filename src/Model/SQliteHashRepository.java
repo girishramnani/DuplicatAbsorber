@@ -1,15 +1,10 @@
-package DatabaseIO;
+package Model;
 
 /**
  * Created by Girish on 09-03-2015.
  */
-public class H2HashRepository implements HashRepository {
 
-
-    public H2HashRepository() {
-
-    }
-
+public class SQliteHashRepository implements HashRepository{
     @Override
     public int addData(String data) {
         return 0;
@@ -22,7 +17,6 @@ public class H2HashRepository implements HashRepository {
 
     @Override
     public void removeAll() {
-
 
     }
 }

@@ -1,11 +1,11 @@
 package main;
 
-import DatabaseIO.Backend;
-import DatabaseIO.HashRepositoryFactory;
-import DatabaseIO.SetHashRepository;
-import FileIO.DefaultFileWalker;
-import FileIO.FileEvent;
-import FileIO.FileEventListener;
+import Model.Backend;
+import Model.HashRepositoryFactory;
+import Model.SetHashRepository;
+import FileFind.DefaultFileWalker;
+import FileFind.FileEvent;
+import FileFind.FileEventListener;
 import FileWork.Algorithm;
 import FileWork.DefaultHashWorker;
 

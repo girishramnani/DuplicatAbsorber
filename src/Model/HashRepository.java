@@ -1,4 +1,4 @@
-package DatabaseIO;
+package Model;
 
 public interface HashRepository {
 /**
