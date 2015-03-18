@@ -8,6 +8,9 @@ import java.awt.*;
  * Created by Girish on 17-03-2015.
  */
 public class MainFrame extends JFrame {
+    private BottomPanel bottomPanel;
+    private TopPanel topPanel;
+
 
 
     public MainFrame(String name){
@@ -15,8 +18,8 @@ public class MainFrame extends JFrame {
         super(name);
         SetupUI();
         setLayout(new BorderLayout(10, 10));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(640,480);
+
+
         setPreferredSize(new Dimension(640,480));
         add(new BottomPanel(),BorderLayout.SOUTH);
         add(new TopPanel(),BorderLayout.NORTH);
@@ -24,10 +27,13 @@ public class MainFrame extends JFrame {
 
     }
 
-    public void SetupUI(){
+    private void SetupUI(){
         try {
             this.setResizable(false);
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setSize(640,480);
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
