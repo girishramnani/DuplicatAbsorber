@@ -19,10 +19,12 @@ public class MainFrame extends JFrame {
         SetupUI();
         setLayout(new BorderLayout(10, 10));
 
+        bottomPanel=new BottomPanel();
+        topPanel = new TopPanel();
+        topPanel.setInteractor(bottomPanel);
 
-        setPreferredSize(new Dimension(640,480));
-        add(new BottomPanel(),BorderLayout.SOUTH);
-        add(new TopPanel(),BorderLayout.NORTH);
+        add(bottomPanel,BorderLayout.SOUTH);
+        add(topPanel,BorderLayout.NORTH);
         setVisible(true);
 
     }
@@ -33,7 +35,7 @@ public class MainFrame extends JFrame {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setSize(640,480);
-
+            setPreferredSize(new Dimension(640,480));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
