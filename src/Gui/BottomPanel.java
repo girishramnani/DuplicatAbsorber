@@ -6,7 +6,8 @@ import java.awt.*;
 /**
  * Created by Girish on 17-03-2015.
  */
-public class BottomPanel extends JPanel implements Interactor{
+public class BottomPanel extends JPanel implements Interactor
+{
 
     private JButton startButton;
     private LayoutManager layoutManager;

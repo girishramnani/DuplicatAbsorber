@@ -35,9 +35,11 @@ public class FileProgressBar extends JDialog {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setAlwaysOnTop(false);
-        this.setVisible(true);
         filelabel.setBackground(panel.getBackground());
 
+    }
+    public void setVisible(boolean bool){
+        this.setVisible(bool);
     }
     public void setFileName(String name){
         filelabel.setText(name);
