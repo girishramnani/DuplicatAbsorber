@@ -11,6 +11,7 @@ import Model.HashRepositoryFactory;
 
 import javax.swing.*;
 import java.util.List;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * Created by Girish on 19-03-2015.
@@ -20,6 +21,7 @@ public class MainWorker extends SwingWorker<Void,String> implements FileEventLis
     private HashRepository hashRepository;
     private HashWorker hashWorker;
     private ComponentMixin componentMixin;
+    private ConcurrentLinkedDeque<FileEvent> fileEvents;
 
     public ComponentMixin getComponentMixin() {
         return componentMixin;
@@ -34,6 +36,7 @@ public class MainWorker extends SwingWorker<Void,String> implements FileEventLis
         this.fileProgressBar = fileProgressBar;
         hashRepository = HashRepositoryFactory.getInstance(Backend.HashSet);
         hashWorker = new DefaultHashWorker(Algorithm.SHA1);
+        fileEvents = new ConcurrentLinkedDeque<>();
 
     }
     public void show(){
