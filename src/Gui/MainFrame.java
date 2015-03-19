@@ -25,12 +25,12 @@ public class MainFrame extends JFrame {
 
         topPanel = new TopPanel();
         fileProgressBar = new FileProgressBar();
-        bottomPanel=new BottomPanel();
-        fileTable =new FileTable();
-        fileProgressBar = new FileProgressBar();
         mainWorker = new MainWorker(fileProgressBar);
+        bottomPanel=new BottomPanel(mainWorker);
+        fileTable =new FileTable();
 
-        bottomPanel.
+
+
 
         topPanel.setInteractor(bottomPanel);
 
