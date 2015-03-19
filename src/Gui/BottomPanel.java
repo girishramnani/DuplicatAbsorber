@@ -12,16 +12,18 @@ public class BottomPanel extends JPanel implements Interactor
     private JButton startButton;
     private LayoutManager layoutManager;
     private JButton deleteButton;
-    public BottomPanel(){
+    private startButtonWorker startButtonWorker;
+    
+    public BottomPanel(ComponentMixin toppanel){
 
         deleteButton = new JButton("Delete");
         startButton = new JButton("Start");
         startButton.setEnabled(false);
         deleteButton.setEnabled(false);
 
+        startButtonWorker=new startButtonWorker(toppanel);
         layoutManager = new FlowLayout(FlowLayout.RIGHT,10,10);
         setLayout(layoutManager);
-        startButton.addActionListener(new startButtonEventlistener());
 
         add(startButton);
         add(deleteButton);

@@ -6,15 +6,13 @@ import FileFind.FileEventListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by Girish on 19-03-2015.
- */
-public class startButtonEventlistener implements ActionListener, FileEventListener {
+
+public class startButtonWorker implements ActionListener, FileEventListener {
 
     private ComponentMixin topPanel;
 
 
-    public startButtonEventlistener(ComponentMixin topPanel){
+    public startButtonWorker(ComponentMixin topPanel){
         this.topPanel = topPanel;
 
     }

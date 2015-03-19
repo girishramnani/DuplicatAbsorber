@@ -1,13 +1,13 @@
-package main;
+package controller;
 
-import Model.Backend;
-import Model.HashRepositoryFactory;
-import Model.SetHashRepository;
 import FileFind.DefaultFileWalker;
 import FileFind.FileEvent;
 import FileFind.FileEventListener;
 import FileWork.Algorithm;
 import FileWork.DefaultHashWorker;
+import Model.Backend;
+import Model.HashRepositoryFactory;
+import Model.SetHashRepository;
 
 import java.io.IOException;
 import java.nio.file.Files;

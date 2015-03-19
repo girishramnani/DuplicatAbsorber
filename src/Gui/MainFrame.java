@@ -22,8 +22,9 @@ public class MainFrame extends JFrame {
         SetupUI();
         setLayout(new BorderLayout(10, 10));
 
-        bottomPanel=new BottomPanel();
         topPanel = new TopPanel();
+        bottomPanel=new BottomPanel(topPanel);
+
         topPanel.setInteractor(bottomPanel);
         fileTable =new FileTable();
         add(bottomPanel, BorderLayout.SOUTH);
