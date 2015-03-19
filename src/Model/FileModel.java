@@ -53,7 +53,7 @@ public class FileModel extends AbstractTableModel {
             return row;
         }
         else if(column ==1){
-            return filecolumn.get(row).getFile().toString();
+            return filecolumn.get(row).getFile().getAbsolutePath().toString();
 
         }
         else{

@@ -17,6 +17,7 @@ public class FileTable extends JTable {
         super();
         fileModel = new FileModel();
         setModel(fileModel);
+        setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         setEnabled(true);
 
 
