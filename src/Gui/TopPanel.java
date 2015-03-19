@@ -5,7 +5,6 @@ import FileFind.FileEventListener;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-public class TopPanel extends JPanel {
+public class TopPanel extends JPanel implements ComponentMixin {
     private JLabel label ;
     private DefaultFileWalker fileWalker;
     private File selectedDirectory;

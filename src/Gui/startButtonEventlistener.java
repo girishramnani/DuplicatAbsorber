@@ -11,19 +11,14 @@ import java.awt.event.ActionListener;
  */
 public class startButtonEventlistener implements ActionListener, FileEventListener {
 
-    private TopPanel topPanel;
+    private ComponentMixin topPanel;
 
 
-    public startButtonEventlistener(TopPanel topPanel){
+    public startButtonEventlistener(ComponentMixin topPanel){
         this.topPanel = topPanel;
 
     }
 
-
-
-    public void setTopPanel(TopPanel topPanel) {
-        this.topPanel = topPanel;
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

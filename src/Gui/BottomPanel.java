@@ -8,7 +8,7 @@ import java.awt.*;
  */
 public class BottomPanel extends JPanel implements Interactor
 {
-
+    private ComponentMixin toppanel;
     private JButton startButton;
     private LayoutManager layoutManager;
     private JButton deleteButton;
@@ -21,6 +21,7 @@ public class BottomPanel extends JPanel implements Interactor
 
         layoutManager = new FlowLayout(FlowLayout.RIGHT,10,10);
         setLayout(layoutManager);
+        startButton.addActionListener(new startButtonEventlistener());
 
         add(startButton);
         add(deleteButton);
