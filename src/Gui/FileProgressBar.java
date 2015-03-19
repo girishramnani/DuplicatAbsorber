@@ -8,7 +8,7 @@ import java.awt.*;
  * Created by Girish on 18-03-2015.
  */
 public class FileProgressBar extends JDialog implements Interactor{
-    private JTextField filelabel;
+    private JLabel filelabel;
     private JProgressBar progressBar;
     final int MAXIMUM = 100;
     private JPanel panel;
@@ -20,8 +20,7 @@ public class FileProgressBar extends JDialog implements Interactor{
 
         progressBar = new JProgressBar(0, MAXIMUM);
         progressBar.setIndeterminate(true);
-        filelabel = new JTextField();
-        filelabel.setEditable(false);
+        filelabel = new JLabel();
 
         panel = new JPanel(new BorderLayout(5, 5));
         panel.add(filelabel, BorderLayout.PAGE_START);

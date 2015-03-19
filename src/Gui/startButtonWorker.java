@@ -1,40 +1,26 @@
 package Gui;
 
-import FileFind.FileEvent;
-import FileFind.FileEventListener;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class startButtonWorker implements ActionListener, FileEventListener {
-    private Interactor interactor;
-    private ComponentMixin topPanel;
-    private FileProgressBar fileProgressBar;
-
-    public startButtonWorker(ComponentMixin topPanel,FileProgressBar fileProgressBar){
-        this.topPanel = topPanel;
-        this.fileProgressBar = fileProgressBar;
-
+public class startButtonWorker implements ActionListener {
+    private MainWorker mainWorker;
+    public MainWorker getMainWorker() {
+        return mainWorker;
     }
 
-    public void setInteractor(Interactor interactor){
-        this.interactor = interactor;
+    public void setMainWorker(MainWorker mainWorker) {
+        this.mainWorker = mainWorker;
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        topPanel.addFileListener(this);
-        fileProgressBar.setVisi(true);
-        topPanel.start();
+        mainWorker.show();
+        mainWorker.execute();
 
     }
 
-    @Override
-    public void apply(FileEvent fileEvent) {
 
-        System.out.println(fileEvent.getFile().toString());
-        interactor.interact(fileEvent.getFile().getName());
-
-    }
 }

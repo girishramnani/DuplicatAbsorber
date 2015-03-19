@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
     private FileTable fileTable;
     private TableModel tableModel;
     private FileProgressBar fileProgressBar;
-
+    private MainWorker mainWorker;
 
 
     public MainFrame(String name){
@@ -25,13 +25,14 @@ public class MainFrame extends JFrame {
 
         topPanel = new TopPanel();
         fileProgressBar = new FileProgressBar();
-        bottomPanel=new BottomPanel(topPanel,fileProgressBar);
-
+        bottomPanel=new BottomPanel();
         fileTable =new FileTable();
+        fileProgressBar = new FileProgressBar();
+        mainWorker = new MainWorker(fileProgressBar);
+
+        bottomPanel.
 
         topPanel.setInteractor(bottomPanel);
-        bottomPanel.attachlistener(fileProgressBar);
-        bottomPanel.addInteractor(fileProgressBar);
 
 
         add(bottomPanel, BorderLayout.SOUTH);
