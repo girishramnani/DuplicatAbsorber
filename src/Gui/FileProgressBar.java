@@ -38,21 +38,20 @@ public class FileProgressBar extends JDialog implements Interactor{
         filelabel.setBackground(panel.getBackground());
 
     }
-    public void setVisible(boolean bool){
-
+    public void setVisi(boolean bool){
         this.setVisible(bool);
     }
     public void setFileName(String name){
         filelabel.setText(name);
-        repaint();
     }
     public void close(){
-        this.close();
+        this.dispose();
     }
 
 
     @Override
     public void interact(String... work) {
         setFileName(work[0]);
+
     }
 }

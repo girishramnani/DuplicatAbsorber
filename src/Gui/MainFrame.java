@@ -24,11 +24,10 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout(10, 10));
 
         topPanel = new TopPanel();
-        bottomPanel=new BottomPanel(topPanel);
         fileProgressBar = new FileProgressBar();
+        bottomPanel=new BottomPanel(topPanel,fileProgressBar);
+
         fileTable =new FileTable();
-
-
 
         topPanel.setInteractor(bottomPanel);
         bottomPanel.attachlistener(fileProgressBar);

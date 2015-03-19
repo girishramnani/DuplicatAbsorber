@@ -25,13 +25,14 @@ public class startButtonWorker implements ActionListener, FileEventListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         topPanel.addFileListener(this);
-        fileProgressBar.setVisible(true);
+        fileProgressBar.setVisi(true);
         topPanel.start();
 
     }
 
     @Override
     public void apply(FileEvent fileEvent) {
+
         System.out.println(fileEvent.getFile().toString());
         interactor.interact(fileEvent.getFile().getName());
 

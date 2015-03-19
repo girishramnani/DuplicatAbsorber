@@ -13,14 +13,15 @@ public class BottomPanel extends JPanel implements Interactor
     private LayoutManager layoutManager;
     private JButton deleteButton;
     private startButtonWorker startButtonWorker;
-    public BottomPanel(ComponentMixin toppanel){
+
+    public BottomPanel(ComponentMixin toppanel,FileProgressBar fileProgressBar){
 
         deleteButton = new JButton("Delete");
         startButton = new JButton("Start");
         startButton.setEnabled(false);
         deleteButton.setEnabled(false);
 
-        startButtonWorker=new startButtonWorker(toppanel    );
+        startButtonWorker=new startButtonWorker(toppanel,fileProgressBar);
         startButton.addActionListener(startButtonWorker);
 
 
