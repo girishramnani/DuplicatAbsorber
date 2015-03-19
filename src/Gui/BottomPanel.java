@@ -13,7 +13,7 @@ public class BottomPanel extends JPanel implements Interactor
     private LayoutManager layoutManager;
     private JButton deleteButton;
     private startButtonWorker startButtonWorker;
-    
+    private FileProgressBar fileProgressBar;
     public BottomPanel(ComponentMixin toppanel){
 
         deleteButton = new JButton("Delete");
@@ -22,6 +22,8 @@ public class BottomPanel extends JPanel implements Interactor
         deleteButton.setEnabled(false);
 
         startButtonWorker=new startButtonWorker(toppanel);
+        startButton.addActionListener(startButtonWorker);
+
         layoutManager = new FlowLayout(FlowLayout.RIGHT,10,10);
         setLayout(layoutManager);
 
@@ -29,8 +31,10 @@ public class BottomPanel extends JPanel implements Interactor
         add(deleteButton);
     }
 
+
+
     @Override
-    public void interact() {
+    public void interact(String... work) {
         startButton.setEnabled(true);
     }
 }

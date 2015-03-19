@@ -5,6 +5,6 @@ package Gui;
  */
 public interface Interactor {
 
-    public void interact();
+    public void interact(String ... work);
 
 }
