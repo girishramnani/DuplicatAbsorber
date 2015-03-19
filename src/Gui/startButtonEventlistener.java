@@ -1,5 +1,6 @@
 package Gui;
 
+import FileFind.FileEvent;
 import FileFind.FileEventListener;
 
 import java.awt.event.ActionEvent;
@@ -26,8 +27,14 @@ public class startButtonEventlistener implements ActionListener, FileEventListen
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        topPanel.addFileListener(this);
+        topPanel.start();
 
-        topPanel.addFileListener();
+    }
+
+    @Override
+    public void apply(FileEvent fileEvent) {
+        System.out.println(fileEvent.getFile().toString());
 
     }
 }
