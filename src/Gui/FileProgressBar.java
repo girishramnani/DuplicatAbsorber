@@ -39,6 +39,7 @@ public class FileProgressBar extends JDialog implements Interactor{
 
     }
     public void setVisible(boolean bool){
+
         this.setVisible(bool);
     }
     public void setFileName(String name){

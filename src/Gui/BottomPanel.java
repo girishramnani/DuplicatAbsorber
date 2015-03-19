@@ -2,7 +2,6 @@ package Gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 /**
  * Created by Girish on 17-03-2015.
@@ -21,9 +20,9 @@ public class BottomPanel extends JPanel implements Interactor
         startButton.setEnabled(false);
         deleteButton.setEnabled(false);
 
-        startButtonWorker=new startButtonWorker(toppanel);
+        startButtonWorker=new startButtonWorker(toppanel    );
         startButton.addActionListener(startButtonWorker);
-        
+
 
 
 
@@ -37,8 +36,15 @@ public class BottomPanel extends JPanel implements Interactor
     public void addInteractor(Interactor interactor){
         startButtonWorker.setInteractor(interactor);
     }
-    public void addButtonListener(ActionListener actionListener){
-        startButton.addActionListener(actionListener);
+    public void attachlistener(FileProgressBar fileProgressBar){
+//        ActionListener act = new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                fileProgressBar.setVisible(true);
+//                startButton.removeActionListener(this);
+//            }
+//        };
+//        startButton.addActionListener(act);
     }
 
     @Override

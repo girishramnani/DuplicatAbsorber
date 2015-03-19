@@ -26,9 +26,15 @@ public class MainFrame extends JFrame {
         topPanel = new TopPanel();
         bottomPanel=new BottomPanel(topPanel);
         fileProgressBar = new FileProgressBar();
+        fileTable =new FileTable();
+
+
 
         topPanel.setInteractor(bottomPanel);
-        fileTable =new FileTable();
+        bottomPanel.attachlistener(fileProgressBar);
+        bottomPanel.addInteractor(fileProgressBar);
+
+
         add(bottomPanel, BorderLayout.SOUTH);
         add(topPanel,BorderLayout.NORTH);
         add(new JScrollPane(fileTable),BorderLayout.CENTER);
