@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 
 public class startButtonWorker implements ActionListener, FileEventListener {
-
+    private Interactor interactor;
     private ComponentMixin topPanel;
 
 
@@ -17,6 +17,9 @@ public class startButtonWorker implements ActionListener, FileEventListener {
 
     }
 
+    public void setInteractor(Interactor interactor){
+        this.interactor = interactor;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

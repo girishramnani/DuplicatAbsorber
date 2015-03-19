@@ -31,8 +31,6 @@ public class BottomPanel extends JPanel implements Interactor
         add(deleteButton);
     }
 
-
-
     @Override
     public void interact(String... work) {
         startButton.setEnabled(true);
