@@ -1,5 +1,7 @@
 package Gui;
 
+import FileFind.DefaultFileWalker;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -9,6 +11,7 @@ import java.io.File;
 
 public class TopPanel extends JPanel {
     private JLabel label ;
+    private DefaultFileWalker fileWalker;
     private File selectedDirectory;
     private JTextField directoryField;
     private JButton BrowseButton;
@@ -28,6 +31,8 @@ public class TopPanel extends JPanel {
         label = new JLabel("The directory:-");
         directoryField = new JTextField(40);
         BrowseButton = new JButton("Browse");
+        fileWalker = new DefaultFileWalker();
+        fileWalker.
         addListners();
         setLayout(layoutManager);
 

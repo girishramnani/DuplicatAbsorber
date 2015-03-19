@@ -8,20 +8,12 @@ import java.awt.event.ActionListener;
  */
 public class startButtonEventlistener implements ActionListener {
 
-    private BottomPanel bottomPanel;
     private TopPanel topPanel;
 
 
-    public startButtonEventlistener(){
+    public startButtonEventlistener(TopPanel topPanel){
+        this.topPanel = topPanel;
 
-    }
-
-    public BottomPanel getBottomPanel() {
-        return bottomPanel;
-    }
-
-    public void setBottomPanel(BottomPanel bottomPanel) {
-        this.bottomPanel = bottomPanel;
     }
 
     public TopPanel getTopPanel() {
