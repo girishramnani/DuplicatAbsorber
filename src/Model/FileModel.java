@@ -3,8 +3,6 @@ package Model;
 import FileFind.FileEvent;
 
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +15,6 @@ public class FileModel extends AbstractTableModel {
     private List<Boolean> selection;
     private String[] headers ={"id","File","Selected"};
     private Class[] classes = {int.class,String.class,Boolean.class};
-    private int index=1;
     public FileModel(){
         super();
         filecolumn=new ArrayList<>();
@@ -59,5 +56,10 @@ public class FileModel extends AbstractTableModel {
         else{
             return selection.get(row);
         }
+    }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return true;
     }
 }

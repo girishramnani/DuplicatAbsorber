@@ -1,7 +1,6 @@
 package Gui;
 
 import FileFind.FileEvent;
-import FileFind.FileEventListener;
 import FileWork.Algorithm;
 import FileWork.DefaultHashWorker;
 import FileWork.HashWorker;
@@ -16,7 +15,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 /**
  * Created by Girish on 19-03-2015.
  */
-public class MainWorker extends SwingWorker<Void,String> implements FileEventListener{
+public class MainWorker extends SwingWorker<Void,String> {
     private FileProgressBar fileProgressBar;
     private HashRepository hashRepository;
     private HashWorker hashWorker;
@@ -29,7 +28,6 @@ public class MainWorker extends SwingWorker<Void,String> implements FileEventLis
 
     public void setComponentMixin(ComponentMixin componentMixin) {
         this.componentMixin = componentMixin;
-        this.componentMixin.addFileListener(this);
     }
 
     public MainWorker(FileProgressBar fileProgressBar){
@@ -65,11 +63,13 @@ public class MainWorker extends SwingWorker<Void,String> implements FileEventLis
     }
 
     public void runFiler() {
-        componentMixin.start();
+        synchronized (this){
+            fileProgressBar.setFileName("Indexing ...");
+            fileEvents = componentMixin.start();
+
+        }
+
+
     }
 
-    @Override
-    public void apply(FileEvent fileEvent) {
-        System.out.println(fileEvent.getFile().toString());
-    }
 }

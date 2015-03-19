@@ -1,7 +1,7 @@
 package Gui;
 
 import FileFind.DefaultFileWalker;
-import FileFind.FileEventListener;
+import FileFind.FileEvent;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 
 public class TopPanel extends JPanel implements ComponentMixin {
@@ -61,15 +62,16 @@ public class TopPanel extends JPanel implements ComponentMixin {
         BrowseButton.addActionListener((ev)-> FileSelection());
     }
 
-    public void addFileListener(FileEventListener fileEventListener){
-        fileWalker.setFileEventListener(fileEventListener);
-    }
-    public void start(){
+
+    public ConcurrentLinkedDeque<FileEvent> start(){
         try {
+            System.out.println(directoryField.getText());
             Files.walkFileTree(Paths.get(directoryField.getText()),fileWalker);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return fileWalker.getFileEvents();
     }
 
     public void FileSelection(){

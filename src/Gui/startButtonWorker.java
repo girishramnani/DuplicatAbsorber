@@ -18,8 +18,10 @@ public class startButtonWorker implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         mainWorker.show();
-        mainWorker.runFiler();
+
+        new Thread(()->mainWorker.runFiler() ).start();
         mainWorker.execute();
+
 
     }
 
