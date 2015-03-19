@@ -28,6 +28,7 @@ public class MainFrame extends JFrame {
         mainWorker = new MainWorker(fileProgressBar);
         bottomPanel=new BottomPanel(mainWorker);
         fileTable =new FileTable();
+        mainWorker.setComponentMixin(topPanel);
 
 
 

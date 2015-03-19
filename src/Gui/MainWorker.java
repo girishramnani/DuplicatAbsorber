@@ -19,10 +19,22 @@ public class MainWorker extends SwingWorker<Void,String> implements FileEventLis
     private FileProgressBar fileProgressBar;
     private HashRepository hashRepository;
     private HashWorker hashWorker;
+    private ComponentMixin componentMixin;
+
+    public ComponentMixin getComponentMixin() {
+        return componentMixin;
+    }
+
+    public void setComponentMixin(ComponentMixin componentMixin) {
+        this.componentMixin = componentMixin;
+        this.componentMixin.addFileListener(this);
+    }
+
     public MainWorker(FileProgressBar fileProgressBar){
         this.fileProgressBar = fileProgressBar;
         hashRepository = HashRepositoryFactory.getInstance(Backend.HashSet);
         hashWorker = new DefaultHashWorker(Algorithm.SHA1);
+
     }
     public void show(){
         fileProgressBar.setVisi(true);
@@ -47,6 +59,10 @@ public class MainWorker extends SwingWorker<Void,String> implements FileEventLis
         }
 
         return null;
+    }
+
+    public void runFiler() {
+        componentMixin.start();
     }
 
     @Override
