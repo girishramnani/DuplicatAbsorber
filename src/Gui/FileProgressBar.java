@@ -8,11 +8,12 @@ import java.awt.*;
  * Created by Girish on 18-03-2015.
  */
 public class FileProgressBar extends JDialog {
-
+    private Interactor interactor;
     private JTextField filelabel;
     private JProgressBar progressBar;
     final int MAXIMUM = 100;
     private JPanel panel;
+
 
     public FileProgressBar(){
         super();
@@ -48,4 +49,14 @@ public class FileProgressBar extends JDialog {
     public void close(){
         this.close();
     }
+
+    public Interactor getInteractor() {
+        return interactor;
+    }
+
+    public void setInteractor(Interactor interactor) {
+        this.interactor = interactor;
+    }
+
+
 }
