@@ -1,12 +1,16 @@
 package Gui;
 
 import FileFind.DefaultFileWalker;
+import FileFind.FileEventListener;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 public class TopPanel extends JPanel {
@@ -18,6 +22,8 @@ public class TopPanel extends JPanel {
     private LayoutManager layoutManager;
     private String Filename;
     private Interactor interactor;
+
+
     public String getFilename() {
         return Filename;
     }
@@ -32,7 +38,7 @@ public class TopPanel extends JPanel {
         directoryField = new JTextField(40);
         BrowseButton = new JButton("Browse");
         fileWalker = new DefaultFileWalker();
-        fileWalker.
+
         addListners();
         setLayout(layoutManager);
 
@@ -54,9 +60,17 @@ public class TopPanel extends JPanel {
 
     private void addListners(){
         BrowseButton.addActionListener((ev)-> FileSelection());
+    }
 
-
-
+    public void addFileListener(FileEventListener fileEventListener){
+        fileWalker.setFileEventListener(fileEventListener);
+    }
+    public void start(){
+        try {
+            Files.walkFileTree(Paths.get(directoryField.getText()),fileWalker);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void FileSelection(){

@@ -1,12 +1,14 @@
 package Gui;
 
+import FileFind.FileEventListener;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  * Created by Girish on 19-03-2015.
  */
-public class startButtonEventlistener implements ActionListener {
+public class startButtonEventlistener implements ActionListener, FileEventListener {
 
     private TopPanel topPanel;
 
@@ -16,9 +18,7 @@ public class startButtonEventlistener implements ActionListener {
 
     }
 
-    public TopPanel getTopPanel() {
-        return topPanel;
-    }
+
 
     public void setTopPanel(TopPanel topPanel) {
         this.topPanel = topPanel;
@@ -26,6 +26,8 @@ public class startButtonEventlistener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        FileProgressBar fpb = new FileProgressBar();
+
+        topPanel.addFileListener();
+
     }
 }
