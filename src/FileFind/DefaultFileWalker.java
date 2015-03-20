@@ -28,7 +28,6 @@ public class DefaultFileWalker extends AbstractFileWalker {
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         fileEvent = new FileEvent(file);
         events.add(fileEvent);
-        System.out.println(file);
         return FileVisitResult.CONTINUE;
     }
 

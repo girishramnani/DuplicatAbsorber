@@ -54,15 +54,12 @@ public class MainWorker extends SwingWorker<Void,String> {
 
     @Override
     protected void process(List<String> chunks) {
-        System.out.println(chunks.get(chunks.size()-1));
         fileProgressBar.setProgressValue((int) ((Integer.parseInt(chunks.get(chunks.size() - 1)) / (float) size) * 100));
         fileProgressBar.setFileName(chunks.get(chunks.size()-2));
     }
 
     @Override
     protected void done() {
-
-
         fileProgressBar.close();
     }
 
