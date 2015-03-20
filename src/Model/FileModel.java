@@ -59,6 +59,17 @@ public class FileModel extends AbstractTableModel {
     }
 
     @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        super.setValueAt(aValue, rowIndex, columnIndex);
+        if (columnIndex==2){
+            selection.set(rowIndex,!selection.get(rowIndex));
+            fireTableCellUpdated(rowIndex,columnIndex);
+        }
+    }
+
+
+
+    @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
         return true;
     }
