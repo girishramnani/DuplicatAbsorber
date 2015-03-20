@@ -43,7 +43,7 @@ public class FirstInstallmentWorking {
                 }
             }
         });
-        Files.walkFileTree(Paths.get("E:\\webprojects"),fileWalker);
+        Files.walkFileTree(Paths.get("E:\\test"),fileWalker);
         System.out.println(aDefaultHashWorker);
         System.out.println(fortest);
     }

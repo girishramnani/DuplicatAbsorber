@@ -48,6 +48,13 @@ public class FileProgressBar extends JDialog implements Interactor{
         this.dispose();
     }
 
+    public void setIndeterminate(boolean bool) {
+        this.progressBar.setIndeterminate(bool);
+    }
+
+    public void setProgressValue(int value){
+        this.progressBar.setValue(value);
+    }
 
     @Override
     public void interact(String... work) {
