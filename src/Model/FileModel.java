@@ -77,4 +77,9 @@ public class FileModel extends AbstractTableModel {
         }
         return false;
     }
+    public void addData(FileEvent fileEvent){
+        filecolumn.add(fileEvent);
+        selection.add(Boolean.FALSE);
+        fireTableRowsInserted(filecolumn.size()-1,filecolumn.size());
+    }
 }
