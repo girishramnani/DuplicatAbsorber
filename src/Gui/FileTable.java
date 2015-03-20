@@ -21,4 +21,7 @@ public class FileTable extends JTable {
 
 
     }
+    public FileModel getFileModel(){
+        return fileModel;
+    }
 }

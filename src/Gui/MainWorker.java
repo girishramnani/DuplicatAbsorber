@@ -45,6 +45,9 @@ public class MainWorker extends SwingWorker<Void,String> {
 
 
     }
+    public void setFileModel(FileModel fileModel){
+        this.fileModel = fileModel;
+    }
     public void show(){
         fileProgressBar.setVisi(true);
     }
@@ -58,7 +61,10 @@ public class MainWorker extends SwingWorker<Void,String> {
 
     @Override
     protected void done() {
+
+
         fileProgressBar.close();
+        System.out.println(hashRepository);
     }
 
     @Override
@@ -68,7 +74,9 @@ public class MainWorker extends SwingWorker<Void,String> {
 
 
                 FileEvent testevent=fileEvents.pop();
+
                 hashRepository.addData(hashWorker.transform(testevent));
+
                 publish(testevent.getFile().getName(),i+"");
 
             }

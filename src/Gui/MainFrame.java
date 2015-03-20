@@ -1,8 +1,9 @@
 package Gui;
 
 
+import Model.FileModel;
+
 import javax.swing.*;
-import javax.swing.table.TableModel;
 import java.awt.*;
 
 /**
@@ -12,7 +13,7 @@ public class MainFrame extends JFrame {
     private BottomPanel bottomPanel;
     private TopPanel topPanel;
     private FileTable fileTable;
-    private TableModel tableModel;
+    private FileModel tableModel;
     private FileProgressBar fileProgressBar;
     private MainWorker mainWorker;
 
@@ -28,10 +29,10 @@ public class MainFrame extends JFrame {
         mainWorker = new MainWorker(fileProgressBar);
         bottomPanel=new BottomPanel(mainWorker);
         fileTable =new FileTable();
+        tableModel=fileTable.getFileModel();
+
         mainWorker.setComponentMixin(topPanel);
-
-
-
+        
 
         topPanel.setInteractor(bottomPanel);
 
