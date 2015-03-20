@@ -74,9 +74,13 @@ public class MainWorker extends SwingWorker<Void,String> {
 
 
                 FileEvent testevent=fileEvents.pop();
-
-                hashRepository.addData(hashWorker.transform(testevent));
-
+                String temp_hash = hashWorker.transform(testevent);
+                if(hashRepository.present(temp_hash)){
+                    fileModel.addData(testevent);
+                }
+                else {
+                    hashRepository.addData(temp_hash);
+                }
                 publish(testevent.getFile().getName(),i+"");
 
             }
@@ -97,5 +101,6 @@ public class MainWorker extends SwingWorker<Void,String> {
 
 
     }
+
 
 }
