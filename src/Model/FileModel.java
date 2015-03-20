@@ -3,7 +3,6 @@ package Model;
 import FileFind.FileEvent;
 
 import javax.swing.table.AbstractTableModel;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +18,6 @@ public class FileModel extends AbstractTableModel {
         super();
         filecolumn=new ArrayList<>();
         selection= new ArrayList<>();
-        filecolumn.add(new FileEvent(Paths.get(".")));
-        selection.add(Boolean.FALSE);
     }
 
     @Override
