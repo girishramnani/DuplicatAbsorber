@@ -71,6 +71,10 @@ public class FileModel extends AbstractTableModel {
 
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
-        return true;
+        if(columnIndex ==2){
+            return true;
+
+        }
+        return false;
     }
 }
