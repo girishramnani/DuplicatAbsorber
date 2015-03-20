@@ -18,7 +18,7 @@ public class DefaultHashWorker implements HashWorker {
     private int SIZE_BUFFER;
     private byte[] buffer;
     public DefaultHashWorker(Algorithm algo){
-        SIZE_BUFFER=2048;
+        SIZE_BUFFER=4096;
         // never a exception would be throw as I m controlling the constructor itself
         try {
             messageDigest = MessageDigest.getInstance(algo.toString());

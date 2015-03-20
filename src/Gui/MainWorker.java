@@ -5,6 +5,7 @@ import FileWork.Algorithm;
 import FileWork.DefaultHashWorker;
 import FileWork.HashWorker;
 import Model.Backend;
+import Model.FileModel;
 import Model.HashRepository;
 import Model.HashRepositoryFactory;
 
@@ -26,7 +27,7 @@ public class MainWorker extends SwingWorker<Void,String> {
     private AtomicInteger count=new AtomicInteger(0);
     private List<FileEvent> duplicatefileList;
     private int size;
-
+    private  FileModel fileModel;
     public ComponentMixin getComponentMixin() {
         return componentMixin;
     }
