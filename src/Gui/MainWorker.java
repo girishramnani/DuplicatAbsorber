@@ -64,7 +64,6 @@ public class MainWorker extends SwingWorker<Void,String> {
 
 
         fileProgressBar.close();
-        System.out.println(hashRepository);
     }
 
     @Override
@@ -95,7 +94,6 @@ public class MainWorker extends SwingWorker<Void,String> {
             fileProgressBar.setFileName("Indexing ...");
             fileEvents = componentMixin.start();
             size = fileEvents.size();
-            System.out.println(size);
             fileProgressBar.setIndeterminate(false);
         }
 
