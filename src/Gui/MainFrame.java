@@ -30,9 +30,9 @@ public class MainFrame extends JFrame {
         bottomPanel=new BottomPanel(mainWorker);
         fileTable =new FileTable();
         tableModel=fileTable.getFileModel();
-
+        mainWorker.setFileModel(tableModel);
         mainWorker.setComponentMixin(topPanel);
-        
+
 
         topPanel.setInteractor(bottomPanel);
 
