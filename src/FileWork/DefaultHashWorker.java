@@ -9,9 +9,6 @@ import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Created by Girish on 10-03-2015.
- */
 public class DefaultHashWorker implements HashWorker {
 
     private MessageDigest messageDigest;
