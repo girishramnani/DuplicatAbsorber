@@ -25,7 +25,9 @@ public class FileModel extends AbstractTableModel {
         selection= new ArrayList<>();
         deleteList = new HashSet<>();
     }
-
+    public HashSet<FileEvent> getDuplicateFiles(){
+        return deleteList;
+    }
 
     public void setInteractor(Interactor interactor){
         this.buttonInteractor = interactor;
