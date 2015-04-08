@@ -23,8 +23,6 @@ public class Deleter implements Worker {
         this.deleteButton = deleteButton;
         this.fileModel =fileModel;
 
-
-
     }
 
     public void initialize(){
