@@ -18,7 +18,7 @@ public class MainFrame extends JFrame {
     private FileProgressBar fileProgressBar;
     private MainWorker mainWorker;
     private Deleter deleter;
-    
+
 
     public MainFrame(String name){
 
