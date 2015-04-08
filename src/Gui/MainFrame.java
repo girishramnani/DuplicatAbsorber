@@ -2,6 +2,7 @@ package Gui;
 
 
 import Model.FileModel;
+import controller.Deleter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,8 @@ public class MainFrame extends JFrame {
     private FileModel tableModel;
     private FileProgressBar fileProgressBar;
     private MainWorker mainWorker;
-
+    private Deleter deleter;
+    
 
     public MainFrame(String name){
 
