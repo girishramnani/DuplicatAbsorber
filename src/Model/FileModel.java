@@ -28,7 +28,7 @@ public class FileModel extends AbstractTableModel {
 
 
     public void setInteractor(Interactor interactor){
-        this.buttonInteractor = buttonInteractor;
+        this.buttonInteractor = interactor;
     }
 
     @Override
