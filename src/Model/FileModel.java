@@ -63,13 +63,17 @@ public class FileModel extends AbstractTableModel {
     public void fireTableCellUpdated(int row, int column) {
         System.out.println(String.format("%d %d changed",row,column));
         if(column ==2){
+            FileEvent selected = filecolumn.get(row);
             if(selection.get(row)){
-                deleteList.add(filecolumn.get(row))   ;
+                deleteList.add(selected);
             }
             else{
-
+                if(deleteList.contains(selected)){
+                    deleteList.remove(selected);
+                }
             }
         }
+        System.out.println(deleteList);
         super.fireTableCellUpdated(row, column);
     }
 
