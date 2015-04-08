@@ -34,6 +34,8 @@ public class MainFrame extends JFrame {
         tableModel=fileTable.getFileModel();
         mainWorker.setFileModel(tableModel);
         mainWorker.setComponentMixin(topPanel);
+        deleter = new Deleter(bottomPanel.getDeleteButton(),tableModel);
+
 
 
         topPanel.setInteractor(bottomPanel);

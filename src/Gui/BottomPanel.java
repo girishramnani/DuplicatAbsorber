@@ -37,4 +37,8 @@ public class BottomPanel extends JPanel implements Interactor
     public void interact(String... work) {
         startButton.setEnabled(true);
     }
+
+    public JButton getDeleteButton() {
+        return deleteButton;
+    }
 }
