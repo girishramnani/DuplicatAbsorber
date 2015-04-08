@@ -1,7 +1,6 @@
 package tests;
 
 import Gui.MainFrame;
-import sun.applet.Main;
 
 import javax.swing.*;
 
@@ -14,7 +13,7 @@ public class guiTest{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                MainFrame mainFrame = new MainFrame("girish");
+                MainFrame mainFrame = new MainFrame("DuPlIcAtE");
             }
         });
 

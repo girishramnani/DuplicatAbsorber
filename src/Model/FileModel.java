@@ -28,7 +28,15 @@ public class FileModel extends AbstractTableModel {
     public HashSet<FileEvent> getDuplicateFiles(){
         return deleteList;
     }
+    public void removeData(FileEvent selectedFile){
 
+        int index = filecolumn.indexOf(selectedFile);
+        selection.remove(index);
+        filecolumn.remove(index);
+        fireTableRowsDeleted(index,index);
+
+
+    }
     public void setInteractor(Interactor interactor){
         this.buttonInteractor = interactor;
     }
@@ -48,6 +56,12 @@ public class FileModel extends AbstractTableModel {
         return filecolumn.size();
     }
 
+
+
+    @Override
+    public void fireTableRowsDeleted(int firstRow, int lastRow) {
+        super.fireTableRowsDeleted(firstRow, lastRow);
+    }
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
@@ -87,6 +101,7 @@ public class FileModel extends AbstractTableModel {
         buttonInteractor.interact(String.valueOf(deleteList.size()));
         super.fireTableCellUpdated(row, column);
     }
+
 
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {

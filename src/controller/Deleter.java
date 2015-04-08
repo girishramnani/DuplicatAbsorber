@@ -48,15 +48,26 @@ public class Deleter  {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fileModel.getDuplicateFiles().forEach(new Consumer<FileEvent>() {
-                    @Override
-                    public void accept(FileEvent fileEvent) {
-                        System.out.println(fileEvent.getFile().getAbsolutePath());
-                        fileEvent.getFile().delete();
-                        
-                    }
-                });
+                int outCome =JOptionPane.showConfirmDialog(null,"Are you sure you want to delete the files?","Delete conformation",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+                if (outCome==JOptionPane.YES_OPTION) {
+
+
+                    fileModel.getDuplicateFiles().forEach(new Consumer<FileEvent>() {
+                        @Override
+                        public void accept(FileEvent fileEvent) {
+                            System.out.println(fileEvent.getFile().getAbsolutePath());
+
+
+                            fileModel.removeData(fileEvent);
+                            fileEvent.getFile().delete();
+
+
+                        }
+                    });
+                    fileModel.getDuplicateFiles().clear();
+                }
             }
+
         });
 
     }
