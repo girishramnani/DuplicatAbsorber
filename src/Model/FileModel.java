@@ -1,6 +1,7 @@
 package Model;
 
 import FileFind.FileEvent;
+import Gui.Interactor;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -13,14 +14,21 @@ import java.util.List;
 public class FileModel extends AbstractTableModel {
     private List<FileEvent> filecolumn;
     private List<Boolean> selection;
-    private HashSet<FileEvent> deleteList;
+    private HashSet<FileEvent> deleteList;  // only need add contain and delete, all work in constant time
     private String[] headers ={"id","File","Selected"};
+    private Interactor buttonInteractor;
     private Class[] classes = {int.class,String.class,Boolean.class};
+
     public FileModel(){
         super();
         filecolumn=new ArrayList<>();
         selection= new ArrayList<>();
         deleteList = new HashSet<>();
+    }
+
+
+    public void setInteractor(Interactor interactor){
+        this.buttonInteractor = buttonInteractor;
     }
 
     @Override
@@ -74,6 +82,7 @@ public class FileModel extends AbstractTableModel {
             }
         }
         System.out.println(deleteList);
+        buttonInteractor.interact(String.valueOf(deleteList.size()));
         super.fireTableCellUpdated(row, column);
     }
 
@@ -103,4 +112,6 @@ public class FileModel extends AbstractTableModel {
         selection.add(Boolean.FALSE);
         fireTableRowsInserted(filecolumn.size()-1,filecolumn.size());
     }
+
+
 }
