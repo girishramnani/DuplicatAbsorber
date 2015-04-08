@@ -30,7 +30,6 @@ public class DefaultHashWorker implements HashWorker {
         SIZE_BUFFER = SIZE_OF_BUFFER;
     }
 
-
     @Override
     public String hash(Path file) throws IOException {
         try(BufferedInputStream br = new BufferedInputStream(Files.newInputStream(file))){

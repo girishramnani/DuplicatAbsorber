@@ -4,6 +4,7 @@ import FileFind.FileEvent;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -12,12 +13,14 @@ import java.util.List;
 public class FileModel extends AbstractTableModel {
     private List<FileEvent> filecolumn;
     private List<Boolean> selection;
+    private HashSet<FileEvent> deleteList;
     private String[] headers ={"id","File","Selected"};
     private Class[] classes = {int.class,String.class,Boolean.class};
     public FileModel(){
         super();
         filecolumn=new ArrayList<>();
         selection= new ArrayList<>();
+        deleteList = new HashSet<>();
     }
 
     @Override
@@ -44,6 +47,7 @@ public class FileModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int row, int column) {
         if(column ==0){
+
             return row;
         }
         else if(column ==1){
@@ -53,6 +57,20 @@ public class FileModel extends AbstractTableModel {
         else{
             return selection.get(row);
         }
+    }
+
+    @Override
+    public void fireTableCellUpdated(int row, int column) {
+        System.out.println(String.format("%d %d changed",row,column));
+        if(column ==2){
+            if(selection.get(row)){
+                deleteList.add(filecolumn.get(row))   ;
+            }
+            else{
+
+            }
+        }
+        super.fireTableCellUpdated(row, column);
     }
 
     @Override
