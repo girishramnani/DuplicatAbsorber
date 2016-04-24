@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="DuplicatAbsorber">
+    <output-path>$PROJECT_DIR$/out/artifacts/DuplicatAbsorber</output-path>
+    <root id="archive" name="DuplicatAbsorber.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="DuplicatAbsorber" />
+      <element id="dir-copy" path="$PROJECT_DIR$/out/production/DuplicatAbsorber" />
+    </root>
+  </artifact>
+</component>
